@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SingleCard from './components/SingleCard'
 import './App.css';
 
 const cardImages = [
@@ -31,6 +32,15 @@ function App() {
     <div className="App">
       <h1>Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
+
+      <div className='card-grid'>
+        {cards.map(card => (
+          <SingleCard 
+          key={card.id}
+          card={card}
+          />
+        ))}
+      </div>
     </div>
   );
 }
